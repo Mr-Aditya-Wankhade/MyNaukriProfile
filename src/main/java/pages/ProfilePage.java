@@ -23,7 +23,7 @@ public class ProfilePage {
     public void navigateToProfile() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(profileIcon)).click();
         WebElement viewProfile = wait.until(ExpectedConditions.visibilityOfElementLocated(viewProfileLink));
-        //System.out.println("View Profile Displayed: " + viewProfile.isDisplayed());
+        System.out.println("View Profile Displayed: " + viewProfile.isDisplayed());
         viewProfile.click();
     }
 }

@@ -26,7 +26,7 @@ public class ResumeHeadlinePage {
         WebElement textarea = wait.until(ExpectedConditions.visibilityOfElementLocated(headlineTextarea));
 
         String currentText = textarea.getAttribute("value");
-        //System.out.println("Current Headline: " + currentText);
+        System.out.println("Current Headline: " + currentText);
 
         String newText = currentText.contains(" & Manual Testing") ?
                 currentText.replace(" & Manual Testing", "").trim() :
@@ -34,7 +34,7 @@ public class ResumeHeadlinePage {
 
         textarea.clear();
         textarea.sendKeys(newText);
-
+        System.out.println("New Headline: " + newText);
         wait.until(ExpectedConditions.visibilityOfElementLocated(saveButton)).click();
     }
 }
