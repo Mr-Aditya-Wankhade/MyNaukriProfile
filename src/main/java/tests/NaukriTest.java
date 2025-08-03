@@ -1,6 +1,8 @@
 package tests;
 
 import base.BaseTest;
+import utils.CredentialsReader;
+
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ProfilePage;
@@ -10,6 +12,9 @@ public class NaukriTest extends BaseTest {
     public static void main(String[] args) throws InterruptedException {
         NaukriTest test = new NaukriTest();
         test.setUp();
+        
+        String email = CredentialsReader.getEmail();
+        String password = CredentialsReader.getPassword();
 
         HomePage home = new HomePage(test.driver);
         LoginPage login = new LoginPage(test.driver);
@@ -17,7 +22,7 @@ public class NaukriTest extends BaseTest {
         ResumeHeadlinePage resume = new ResumeHeadlinePage(test.driver);
 
         home.clickLogin();
-        login.login("adityawankhade441@gmail.com", "Love@0406");
+        login.login(email, password);
         //Thread.sleep(5000); // Optional wait
 
         profile.navigateToProfile();
